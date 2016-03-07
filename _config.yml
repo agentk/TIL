@@ -6,16 +6,39 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: TIL
+title: Today I Learned
 email: karl@bearded.sexy
 description: > # this means to ignore newlines until "baseurl:"
-  Today I Learned. A searchable knowledge base of markdown notes.
+  Today I Learned. A searchable knowledge base of markdown notes forming
+  categories usable like cheat sheets.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://til.dev" # the base hostname & protocol for your site
+url: "https://til.karlbowden.com" # the base hostname & protocol for your site
 twitter_username: karlbowden
 github_username:  agentk
-permalink: /:title/
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'bs-config.js']
+permalink: /:categories/:title/
+exclude: ['Gemfile', 'Gemfile.lock']
+timezone: Australia/Sydney
+
+gems:
+  - jekyll-lunr-js-search
+  - jekyll-paginate
+  - jekyll-sitemap
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
+markdown_ext:  markdown,mkdown,mkdn,mkd,md
+redcarpet:
+  extensions:
+    - tables
+    - autolink
+    - strikethrough
+    - space_after_headers
+    - with_toc_data
+    - fenced_code_blocks
+    - no_intra_emphasis
+    - footnotes
+    - smart
+
+lunr_search:
+  js_dir: assets/scripts
+

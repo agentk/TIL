@@ -1,23 +1,30 @@
 ---
 layout: default
+exclude_from_search: true
 ---
+<article class='content content--home'>
 
-<div class="home">
+  <h1 class='page-heading'>Posts</h1>
 
-  <h1 class="page-heading">Posts</h1>
+  <ul class='post-list'>
 
-  <ul class="post-list">
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+      <li class='post-list-row'>
+        <div class='post-meta'>{{ post.date | date: '%b %-d, %Y' }}</div>
+        <a class='post-link' href='{{ post.url | prepend: site.baseurl }}'>{{ post.title }}</a>
+        <div class='post-tags'>
+          {% for tag in post.categories %}
+            <span class='post-tag'>
+              {{ tag }}
+            </span>
+          {% endfor %}
+        </div>
       </li>
+
     {% endfor %}
+
   </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</article>
 
-</div>

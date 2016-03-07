@@ -1,206 +1,158 @@
-/**
- * Reset some basic elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
+// Reset ----------------------------------------------------------------------
+input {
+  font: inherit;
 }
 
+// Base -----------------------------------------------------------------------
+html {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: 'kern' 1;
+  -moz-font-feature-settings: 'kern' 1;
+  -o-font-feature-settings: 'kern' 1;
+  font-feature-settings: 'kern' 1;
+  font-kerning: normal;
 
+  @media only screen and (min-width: 480px) {
+    font-size: $base-font-size + 1px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: $base-font-size + 1px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: $base-font-size + 2px;
+  }
+  @media only screen and (min-width: 1280px) {
+    font-size: $base-font-size + 3px;
+  }
+  @media only screen and (min-width: 1440px) {
+    font-size: $base-font-size + 4px;
+  }
+}
 
-/**
- * Basic styling
- */
 body {
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-    color: $text-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-feature-settings: "kern" 1;
-    -moz-font-feature-settings: "kern" 1;
-    -o-font-feature-settings: "kern" 1;
-    font-feature-settings: "kern" 1;
-    font-kerning: normal;
+  margin: 0;
+  padding: 0;
 }
 
-
-
-/**
- * Set `margin-bottom` to maintain vertical rhythm
- */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+// Text selection styling -----------------------------------------------------
+::-moz-selection {
+  background: $brand-color;
+  color: white;
+  text-shadow: none;
 }
 
-
-
-/**
- * Images
- */
-img {
-    max-width: 100%;
-    vertical-align: middle;
+::selection {
+  background: $brand-color;
+  color: white;
+  text-shadow: none;
 }
 
+// Media elements -------------------------------------------------------------
+img, svg, video {
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+}
 
+svg:not(:root) {
+  overflow: hidden;
+}
 
-/**
- * Figures
- */
-figure > img {
+// Figures --------------------------------------------------------------------
+figure {
+  margin-left: 0;
+  margin-right: 0;
+  > img {
     display: block;
+  }
 }
 
 figcaption {
-    font-size: $small-font-size;
+  font-size: $small-font-size;
 }
 
-
-
-/**
- * Lists
- */
+// Lists ----------------------------------------------------------------------
 ul, ol {
-    margin-left: $spacing-unit;
+  padding-left: $gutter;
 }
 
 li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
+  padding: 0 0 1rem 0.5rem;
+  > ul, > ol {
+    margin-bottom: 0;
+  }
 }
 
+// Headings -------------------------------------------------------------------
+h1 {
+  font-size: 2em;
+}
 
-
-/**
- * Headings
- */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: $base-font-weight;
+  font-family: $heading-font-family;
+  font-weight: 700;
+  margin: 1em 0 0.5em;
+  + h1, + h2, + h3, + h4, + h5, + h6 {
+    margin-top: 1em;
+  }
 }
 
+// Block elements -------------------------------------------------------------
+p {
+  margin: 1.5em 0;
+}
 
-
-/**
- * Links
- */
+// Links ----------------------------------------------------------------------
 a {
-    color: $brand-color;
-    text-decoration: none;
-
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
+  color: $brand-color;
+  text-decoration: none;
+  &:active, &:hover {
+    color: darken($brand-color, 15%);
+    outline: 0;
+  }
 }
 
-
-
-/**
- * Blockquotes
- */
+// Block quotes ---------------------------------------------------------------
 blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
+  border-left: 3px solid $text-color;
+  padding: 1px $gutter / 2;
+  margin: 1.75em 0;
+  padding: 0 0 3px 20px;
+  margin: 1.75em 0 1.75em -23px;
 
-    > :last-child {
-        margin-bottom: 0;
-    }
+  >:first-child {
+    margin-top: 0;
+  }
+  >:last-child {
+    margin-bottom: 0;
+  }
 }
 
-
-
-/**
- * Code formatting
- */
-pre,
-code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+// Code formatting ------------------------------------------------------------
+pre, code {
+  border-radius: 1px;
+  font-size: 0.9rem;
 }
 
 code {
-    padding: 1px 5px;
+  color: $code-color;
+  padding: 0 4px;
+  word-break: break-word;
 }
 
 pre {
-    padding: 8px 12px;
-    overflow-x: auto;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
+  border: 1px solid $pre-border;
+  background: $pre-background;
+  padding: 8px $gutter / 2;
+  overflow-x: auto;
+  > code {
+    border: 0;
+    color: inherit;
+    padding: 0;
+    word-break: normal;
+  }
 }
 
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
-}
-
-
-
-/**
- * Clearfix
- */
-%clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
-
-
-
-/**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
-    }
-}

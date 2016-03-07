@@ -1,0 +1,37 @@
+---
+layout: page
+title: Search
+exclude_from_search: true
+permalink: /search/
+---
+
+<section id="search-results" style="display: none;">
+  <div class="entries">
+    <div class="search-results-list">
+
+    </div>
+  </div>
+</section>
+
+{% raw %}
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <h3>
+      <a href="{{url}}">{{title}}</a>{{#date}}<small class="pubdate"><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+    </h3>
+  {{/entries}}
+</script>
+{% endraw %}
+
+<script src="/assets/scripts/search.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl: '/assets/scripts/index.json',   // Url for the .json file containing search index data
+      results : '#search-results',  // selector for containing search results element
+      entries : '.entries',         // selector for search entries containing element (contained within results above)
+      template: '#search-results-template'  // selector for Mustache.js template
+    });
+  });
+</script>

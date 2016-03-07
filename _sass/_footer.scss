@@ -1,0 +1,32 @@
+.footer {
+  font-size: 0.75rem;
+  background: $footer-background;
+  padding: 1rem;
+  margin: 3rem 0.5rem 0.5rem;
+
+  &, a {
+    color: $footer-color;
+  }
+  a {
+    font-weight: bold;
+  }
+}
+
+.footer__container {
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 640px) {
+    display: flex;
+
+    > * {
+      margin: 0.25rem 0;
+      flex: 1 1 50%;
+    }
+
+    > :last-child {
+      text-align: right;
+    }
+  }
+}

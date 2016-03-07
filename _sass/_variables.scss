@@ -1,0 +1,46 @@
+
+// Typography -----------------------------------------------------------------
+
+$base-font-family: 'Source Sans Pro', sans-serif;
+$base-font-size: 16px;
+$base-font-weight: 400;
+$base-line-height: 1.5;
+
+$heading-font-family: 'Alegreya Sans', sans-serif;
+
+$monospace-font-family: 'Inconsolata', courier;
+
+$small-font-size: $base-font-size * 0.875;
+
+
+// Colour scheme --------------------------------------------------------------
+
+$text-color: #222;
+$background-color: #fff;
+$brand-color: #2a7ae2;
+$code-color: #e22a2a;
+
+$pre-border: #eee;
+$pre-background: #f9f9f9;
+
+$header-background: #eee;
+$header-color: #000;
+$header-border: $brand-color;
+
+$header-background: darken(#6a2ae2, 20%);
+$header-background: darken($brand-color, 30%);
+$header-color: #fff;
+
+$footer-background: #333;
+$footer-color: #fff;
+
+
+$grey-color: #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark: darken($grey-color, 25%);
+
+
+// Layout ---------------------------------------------------------------------
+
+$gutter: 30px;
+$content-width: 800px;

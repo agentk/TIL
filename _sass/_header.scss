@@ -1,0 +1,76 @@
+.header {
+  padding: 0.5rem;
+  margin: 0 0 0.5rem;
+  // background: $header-background;
+  // border-bottom: 1px solid $header-border;
+
+  // font-size: 0.75rem;
+  background: $header-background;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0.5rem 3rem;
+
+  &, a {
+    color: $header-color;
+  }
+  a {
+    font-weight: bold;
+  }
+
+  ::-webkit-input-placeholder {
+     color: $header-color;
+     opacity: 0.5;
+  }
+
+  ::-moz-placeholder {
+     color: $header-color;
+     opacity: 0.5;
+  }
+
+  :-ms-input-placeholder {
+     color: $header-color;
+     opacity: 0.5;
+  }
+}
+
+.header__container {
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header__branding {
+  float: left;
+  padding: 0.5rem 0;
+}
+
+.header__navigation {
+  float: right;
+  padding: 0;
+}
+
+.header__link {
+  float: left;
+  margin: 0 0 0 1rem;
+  padding: 0.5rem 0;
+}
+
+.header__search-section {
+  clear: both;
+  margin: 0;
+}
+
+.header__search-form {}
+
+.header__search-field {
+  width: 100%;
+  display: block;
+  border: none;
+  color: $header-color;
+  margin: 0;
+  padding: 1rem 0;
+  font-size: inherit;
+  background: transparent;
+  &:focus {
+    outline: 0;
+  }
+}

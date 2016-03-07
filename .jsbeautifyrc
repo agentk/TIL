@@ -1,0 +1,18 @@
+{
+  "html": {
+    "end_with_newline": true,
+    "indent_handlebars": true,
+    "indent_size": 2,
+    "max_preserve_newlines": 2
+  },
+  "css": {
+    "indent_size": 2,
+    "end_with_newline": true,
+    "selector_separator_newline": false
+  },
+  "js": {
+    "end_with_newline": true,
+    "indent_size": 2,
+    "max_preserve_newlines": 2
+  }
+}
