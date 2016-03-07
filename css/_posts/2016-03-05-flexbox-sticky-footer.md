@@ -26,10 +26,6 @@ tags:
 ### CSS
 
 ```css
-html, body {
-  height: 100%;
-}
-
 body {
   display: flex;
   flex-direction: column;
