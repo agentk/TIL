@@ -8,6 +8,12 @@ tags:
   - illuminate
 ---
 
+## Install
+
+```bash
+composer require illuminate/support
+```
+
 ## Condensed Collection instance methods
 
 ```php
@@ -123,5 +129,6 @@ $collection->sum(function($item) use ($lookup_table) {
 
 ## References
 
+- https://packagist.org/packages/illuminate/support
 - https://laravel.com/api/5.2/Illuminate/Support/Collection.html
 - http://adamwathan.me/2015/01/01/refactoring-loops-and-conditionals/
